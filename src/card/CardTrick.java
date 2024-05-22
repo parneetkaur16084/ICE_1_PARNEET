@@ -20,15 +20,15 @@ public class CardTrick {
         Random rand = new Random();
         String[] suits = {"Hearts", "Diamonds", "Clubs", "Spades"};
 
-        // Define the lucky card
+        
         Card luckyCard = new Card();
-        luckyCard.setValue(4); // Example: 2 of Clubs
+        luckyCard.setValue(4);
         luckyCard.setSuit("SPADES");
 
-        // Randomly decide to include the lucky card or not
-        boolean includeLuckyCard = rand.nextBoolean(); // True or false decision
-        int luckyIndex = includeLuckyCard ? rand.nextInt(magicHand.length) : -1; // Set to -1 if not included
 
+        boolean includeLuckyCard = rand.nextBoolean();
+        int luckyIndex = includeLuckyCard ? rand.nextInt(magicHand.length) : -1; 
+        
         // Fill the magic hand with random cards
         for (int i = 0; i < magicHand.length; i++) {
             if (i == luckyIndex) {
